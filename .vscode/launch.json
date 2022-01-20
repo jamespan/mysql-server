@@ -8,8 +8,7 @@
             "name": "Debug mysqld",
             "type": "cppdbg",
             "request": "launch",
-            // "program": "${workspaceFolder}/target/build/bin/mysqld",
-            "program": "${command:cmake.launchTargetPath}",
+            "program": "${workspaceFolder}/target/build/bin/mysqld",
             "args": [
                 "--defaults-file=${workspaceFolder}/target/etc/my.cnf",
                 "--datadir=${workspaceFolder}/target/data"
@@ -19,6 +18,26 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-        }
+        },
+        {
+            "name": "Debug CMake Target",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+        },
+        // {
+        //     "name": "Attach",
+        //     "type": "cppdbg",
+        //     "request": "attach",
+        //     "program": "${workspaceFolder}/target/build/bin/mysqld",
+        //     "processId": "${command:pickProcess}",
+        //     "MIMode": "lldb",
+        // }
     ]
 }
